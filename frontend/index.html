@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Magic Vision - Disappearing Person Effect</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-glow"></div>
+
+  <header class="topbar glass">
+    <div class="brand">
+      <span class="brand-icon">&#10022;</span>
+      <h1>AI MAGIC VISION</h1>
+    </div>
+    <div class="cam-status">
+      <span id="camDot" class="dot offline"></span>
+      <span id="camText">Camera Offline</span>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="stage glass">
+      <div class="video-wrap">
+        <img id="feed" src="/video_feed" alt="Live magic camera feed" />
+        <div class="hud">
+          <div class="hud-item"><span class="hud-label">FPS</span><span id="hudFps">--</span></div>
+          <div class="hud-item"><span class="hud-label">GESTURE</span><span id="hudGesture">--</span></div>
+          <div class="hud-item"><span class="hud-label">EFFECT</span><span id="hudEffect">--</span></div>
+          <div class="hud-item"><span class="hud-label">PERSON</span><span id="hudPerson">--</span></div>
+        </div>
+        <div id="captureBar" class="capture-bar hidden">
+          <div class="capture-label">Capturing background - please step out of frame</div>
+          <div class="capture-track"><div id="captureFill" class="capture-fill"></div></div>
+        </div>
+        <div id="errorBanner" class="error-banner hidden"></div>
+      </div>
+
+      <div class="controls">
+        <button id="btnRecalibrate" class="btn ghost">&#10227; Recalibrate Background</button>
+        <button id="btnRestart" class="btn primary">&#8635; Restart Experience</button>
+      </div>
+      <div class="controls fx-row">
+        <button id="btnEyes" class="btn toggle on" data-feature="eyes">&#128065; Eye Rays: ON</button>
+        <button id="btnHeart" class="btn toggle on" data-feature="heart">&#10084; Heart Reactor: ON</button>
+        <button id="btnBoot" class="btn ghost">&#9889; Replay Boot</button>
+      </div>
+    </section>
+
+    <aside class="side">
+      <section class="panel glass">
+        <h2>Gesture Controls</h2>
+        <div class="gesture-card">
+          <span class="gesture-emoji">&#9995;</span>
+          <div><strong>Open Palm</strong><p>Disappear in a burst of light</p></div>
+        </div>
+        <div class="gesture-card">
+          <span class="gesture-emoji">&#9994;</span>
+          <div><strong>Closed Fist</strong><p>Reappear from particles</p></div>
+        </div>
+        <div class="gesture-card">
+          <span class="gesture-emoji">&#128070;</span>
+          <div><strong>Pointing Finger</strong><p>Hold 1 sec for teleport glitch</p></div>
+        </div>
+        <div class="gesture-card">
+          <span class="gesture-emoji">&#129306;</span>
+          <div><strong>Ghost Mode</strong><p>1-4 fingers: fade out step by step</p></div>
+        </div>
+        <p class="tip">Hold the gesture toward the camera for a split second. No buttons needed for the magic.</p>
+      </section>
+
+      <section class="panel glass">
+        <h2>Status</h2>
+        <div id="statusLine" class="status-line">Starting...</div>
+        <ul id="eventLog" class="event-log"></ul>
+      </section>
+    </aside>
+  </main>
+
+  <footer class="footnote">
+    Camera processing is local. No video is uploaded.
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

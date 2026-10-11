@@ -1,0 +1,7 @@
+# AI Magic Vision dependencies (Python 3.11+)
+# numpy is pinned to 1.26.x for MediaPipe compatibility.
+numpy==1.26.4
+opencv-python>=4.8.0
+mediapipe==0.10.14
+fastapi>=0.110.0
+uvicorn>=0.29.0
